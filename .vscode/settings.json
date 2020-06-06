@@ -1,0 +1,10 @@
+{
+  "python.pythonPath": "/Users/BMB/.local/share/virtualenvs/WillyGo-R7TDD2Se/bin/python",
+  "workbench.colorTheme": "Default Dark+",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#4db89d",
+    "titleBar.activeBackground": "#4db89d",
+    "titleBar.inactiveBackground": "#4db89d",
+  },
+  "window.title": "Back-End WILLY-GO",
+}
