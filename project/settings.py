@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'clubs',
     'trips',
     'chats',
+    'messsages',
 ]
 
 MIDDLEWARE = [
@@ -117,7 +118,7 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False
 
 USE_TZ = True
 
@@ -138,3 +139,5 @@ AUTH_USER_MODEL = 'jwt_auth.User'
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+DATETIME_FORMAT = 'd/m/y - H:i'
