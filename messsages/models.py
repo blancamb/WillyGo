@@ -9,13 +9,13 @@ class Message(models.Model):
     
     chat = models.ForeignKey(
         'chats.Chat',
-        related_name='chat_messages',
+        related_name='messages',
         on_delete=models.CASCADE
     )
 
     user = models.ForeignKey(
         'jwt_auth.User',
-        related_name='created_messages',
+        related_name='user',
         on_delete=models.CASCADE
     )
 

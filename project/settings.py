@@ -128,8 +128,10 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'jwt_auth.authentication.JWTAuthentication'
+        'jwt_auth.authentication.JWTAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ],
+    'DATETIME_FORMAT' : '%d/%m/%y - %H:%M',
 }
 
 AUTH_USER_MODEL = 'jwt_auth.User'
@@ -140,4 +142,3 @@ AUTH_USER_MODEL = 'jwt_auth.User'
 
 STATIC_URL = '/static/'
 
-DATETIME_FORMAT = 'd/m/y - H:i'

@@ -1,0 +1,68 @@
+
+body, h1, h2, h3, h4, h5 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+a {
+  font-weight: normal;
+  text-decoration: none;
+  color: rgb(21, 39, 35);
+}
+
+.navbar {
+  background: rgb(42, 170, 170);
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+//? CHATBOX
+
+.chatbox-frame {
+  background-color: rgb(179, 212, 202);
+  max-height: 300px;
+  max-width: 300px;
+  overflow: scroll;
+
+}
+
+//? TRIPS
+
+.club-trip-index {
+  display: flex;
+  max-height: 200px;
+  max-width: 100%;
+  overflow: scroll;
+}
+
+.my-trips-index {
+  display: flex;
+  max-height: 200px;
+  max-width: 100%;
+  overflow: scroll;
+}
+
+.trip-card {
+  margin: 10px;
+  background-color: rgb(179, 212, 202);
+  width: 120px;
+  height: 120px;
+  font-size: 12px;
+}
+
+//? CLUBS
+
+.my-clubs-index {
+  display: flex;
+  max-height: 200px;
+  max-width: 100%;
+  overflow: scroll;
+}
+
+.club-card {
+  margin: 10px;
+  background-color: rgb(179, 212, 202);
+  width: 120px;
+  height: 120px;
+  font-size: 12px;
+}

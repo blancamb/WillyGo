@@ -1,0 +1,52 @@
+[
+{
+  "model": "messsages.message",
+  "pk": 1,
+  "fields": {
+    "content": "message test in LateNight chat from Adam",
+    "created_at": "2020-06-07T19:31:14.585Z",
+    "chat": 1,
+    "user": 10
+  }
+},
+{
+  "model": "messsages.message",
+  "pk": 2,
+  "fields": {
+    "content": "message test in LateNight chat from Blanca",
+    "created_at": "2020-06-07T19:31:25.395Z",
+    "chat": 1,
+    "user": 2
+  }
+},
+{
+  "model": "messsages.message",
+  "pk": 3,
+  "fields": {
+    "content": "message test in Xis! chat from Rosalia",
+    "created_at": "2020-06-07T19:31:50.527Z",
+    "chat": 2,
+    "user": 9
+  }
+},
+{
+  "model": "messsages.message",
+  "pk": 4,
+  "fields": {
+    "content": "message test in LateNight chat from Adam 2",
+    "created_at": "2020-06-07T19:32:04.385Z",
+    "chat": 1,
+    "user": 10
+  }
+},
+{
+  "model": "messsages.message",
+  "pk": 5,
+  "fields": {
+    "content": "message test in LateNight chat from Blanca 2",
+    "created_at": "2020-06-07T19:32:19.556Z",
+    "chat": 1,
+    "user": 2
+  }
+}
+]

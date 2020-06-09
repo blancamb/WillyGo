@@ -1,0 +1,62 @@
+[
+{
+  "model": "clubs.club",
+  "pk": 1,
+  "fields": {
+    "name": "Late Night Walkers",
+    "members": [
+      2,
+      10
+    ]
+  }
+},
+{
+  "model": "clubs.club",
+  "pk": 2,
+  "fields": {
+    "name": "Xis!",
+    "members": [
+      2,
+      9
+    ]
+  }
+},
+{
+  "model": "clubs.club",
+  "pk": 3,
+  "fields": {
+    "name": "Brixton",
+    "members": [
+      2,
+      13
+    ]
+  }
+},
+{
+  "model": "clubs.club",
+  "pk": 4,
+  "fields": {
+    "name": "Barrio",
+    "members": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  }
+},
+{
+  "model": "clubs.club",
+  "pk": 5,
+  "fields": {
+    "name": "Bellera Bros",
+    "members": [
+      2,
+      11,
+      12
+    ]
+  }
+}
+]

@@ -6,6 +6,7 @@ from rest_framework import status
 from rest_framework.exceptions import NotFound, PermissionDenied
 from rest_framework.permissions import IsAuthenticated
 
+from clubs.models import Club
 from .models import Chat
 from .serializers import ChatSerializer, PopulatedChatSerializer
 
@@ -21,7 +22,7 @@ class ChatListView(APIView):
 
 
     def post(self, request):
-        request.data['club'] = request.user.id
+        # request.data['club'] = request.user.id
         new_chat = ChatSerializer(data=request.data)
         if new_chat.is_valid():
             new_chat.save()
@@ -36,12 +37,13 @@ class ChatDetailView(APIView):
 
     def get_chat(self, pk):
         try:
-            return Chat.objects.get(pk=pk)
+            return Chat.objects.filter(club__id=pk)
         except Chat.DoesNotExist:
             raise NotFound()
 
-    def get(self, _request, pk):
-        chat = self.get_chat(pk)
+# ? gets chat from specific club (pk -> club id)
+    def get(self, request, pk):
+        chat = Chat.objects.get(club_id=pk)
         serialized_chat = PopulatedChatSerializer(chat)
         return Response(serialized_chat.data)
 

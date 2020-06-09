@@ -4,7 +4,7 @@ from django.db import models
 class Chat(models.Model):
     club = models.OneToOneField(
     'clubs.Club',
-    related_name='club_chat',
+    related_name='owner_club',
     on_delete=models.CASCADE
     )
 

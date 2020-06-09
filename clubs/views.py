@@ -3,14 +3,24 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.exceptions import NotFound, PermissionDenied
+from rest_framework.permissions import IsAuthenticated
+
 
 from .models import Club
 from .serializers import ClubSerializer, PopulatedClubSerializer
 
 class ClubListView(APIView):
 
-    def get(self, _request):
-        clubs = Club.objects.all()
+    permission_classes = (IsAuthenticated,)
+
+    # def is_club_member(self, club, user):
+    #     if club.members.id != user.id:
+    #         raise PermissionDenied
+
+#? gets clubs only when user is member
+    def get(self, request):
+        user = self.request.user
+        clubs = Club.objects.filter(members=user)
         serialized_clubs = PopulatedClubSerializer(clubs, many=True)
         return Response(serialized_clubs.data, status=status.HTTP_200_OK)
 
@@ -24,9 +34,13 @@ class ClubListView(APIView):
 
 class ClubDetailView(APIView):
 
+    permission_classes = (IsAuthenticated,)
+
+#? gets single club only when user is member
     def get_club(self, pk):
+        user = self.request.user
         try:
-            return Club.objects.get(pk=pk)
+            return Club.objects.filter(members=user).get(pk=pk)
         except Club.DoesNotExist:
             raise NotFound()
     

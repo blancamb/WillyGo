@@ -22,13 +22,13 @@ class MessageListView(APIView):
 
     permission_classes = (IsAuthenticated,)
 
-    def get(self, _request):
+    def get(self, request):
         messages = Message.objects.all()
         serialized_messages = PopulatedMessageSerializer(messages, many=True)
         return Response(serialized_messages.data, status=status.HTTP_200_OK)
 
     def post(self, request):
-        request.data['owner'] = request.user.id
+        # request.data['user'] = request.user.id
         new_message = MessageSerializer(data=request.data)
         if new_message.is_valid():
             new_message.save()

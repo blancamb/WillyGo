@@ -1,0 +1,72 @@
+[
+{
+  "model": "pins.pin",
+  "pk": 1,
+  "fields": {
+    "title": "pin 1 in trip 1 LateNight by adam",
+    "details": "details text in trips, lalalalalalala!",
+    "image": "",
+    "link": "",
+    "owner": 10,
+    "trips": [
+      1
+    ]
+  }
+},
+{
+  "model": "pins.pin",
+  "pk": 2,
+  "fields": {
+    "title": "pin 2 in trip 1 LateNight by adam",
+    "details": "details text in trips, lalalalalalala!",
+    "image": "",
+    "link": "",
+    "owner": 10,
+    "trips": [
+      1
+    ]
+  }
+},
+{
+  "model": "pins.pin",
+  "pk": 3,
+  "fields": {
+    "title": "pin 3 in trip 1 LateNight by adam",
+    "details": "details text in trips, lalalalalalala!",
+    "image": "",
+    "link": "",
+    "owner": 10,
+    "trips": [
+      1
+    ]
+  }
+},
+{
+  "model": "pins.pin",
+  "pk": 4,
+  "fields": {
+    "title": "pin 1 in trip 1 LateNight by blanca",
+    "details": "details text in trips, lalalalalalala!",
+    "image": "",
+    "link": "",
+    "owner": 2,
+    "trips": [
+      1
+    ]
+  }
+},
+{
+  "model": "pins.pin",
+  "pk": 5,
+  "fields": {
+    "title": "pin 1 in trip 1 Barrio by blanca?",
+    "details": "",
+    "image": "",
+    "link": "",
+    "owner": 2,
+    "trips": [
+      11
+    ]
+  }
+}
+]

@@ -3,14 +3,30 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.exceptions import NotFound, PermissionDenied
+from rest_framework.permissions import IsAuthenticated
 
 from .models import Trip
+from clubs.models import Club
 from .serializers import TripSerializer, PopulatedTripSerializer
 
-class TripListView(APIView):
+class ClubTripsListView(APIView):
 
+    permission_classes = (IsAuthenticated,)
+
+    def get(self, request, pk):
+        trips = Trip.objects.filter(owner=pk)
+        serialized_trips = PopulatedTripSerializer(trips, many=True)
+        return Response(serialized_trips.data, status=status.HTTP_200_OK)
+
+
+class TripsListView(APIView):
+
+    permission_classes = (IsAuthenticated,)
+
+    
     def get(self, _request):
-        trips = Trip.objects.all()
+        user = self.request.user
+        trips = Trip.objects.filter(owner__members__username = user)
         serialized_trips = PopulatedTripSerializer(trips, many=True)
         return Response(serialized_trips.data, status=status.HTTP_200_OK)
 
@@ -20,9 +36,11 @@ class TripListView(APIView):
             new_trip.save()
             return Response(new_trip.data, status=status.HTTP_201_CREATED)
         return Response(new_trip.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
-
+        
 
 class TripDetailView(APIView):
+
+    permission_classes = (IsAuthenticated,)
 
     def get_trip(self, pk):
         try:
@@ -32,7 +50,7 @@ class TripDetailView(APIView):
     
     def get(self, _request, pk):
         trip = self.get_trip(pk)
-        serialized_trip = TripSerializer(trip)
+        serialized_trip = PopulatedTripSerializer(trip)
         return Response(serialized_trip.data)
 
     def put(self, request, pk):

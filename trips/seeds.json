@@ -1,0 +1,138 @@
+[
+{
+  "model": "trips.trip",
+  "pk": 1,
+  "fields": {
+    "name": "Trip 1 in LateNightWs",
+    "owner": 1
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 2,
+  "fields": {
+    "name": "Trip 2 in LateNightWs",
+    "owner": 1
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 3,
+  "fields": {
+    "name": "Trip 3 in LateNightWs",
+    "owner": 1
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 4,
+  "fields": {
+    "name": "Trip 1 in Xis!",
+    "owner": 2
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 5,
+  "fields": {
+    "name": "Trip 2 in Xis!",
+    "owner": 2
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 6,
+  "fields": {
+    "name": "Trip 3 in Xis!",
+    "owner": 2
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 7,
+  "fields": {
+    "name": "Trip 4 in Xis!",
+    "owner": 2
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 8,
+  "fields": {
+    "name": "Trip 5 in Xis!",
+    "owner": 2
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 9,
+  "fields": {
+    "name": "Trip 1 in Brixton",
+    "owner": 3
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 10,
+  "fields": {
+    "name": "Trip 2 in Xis!",
+    "owner": 3
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 11,
+  "fields": {
+    "name": "Trip 1 in Barrio",
+    "owner": 4
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 12,
+  "fields": {
+    "name": "Trip 2 in Barrio",
+    "owner": 4
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 13,
+  "fields": {
+    "name": "Trip 3 in Barrio",
+    "owner": 4
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 14,
+  "fields": {
+    "name": "Trip 1 in BelleraBros",
+    "owner": 5
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 15,
+  "fields": {
+    "name": "Trip 2 in BelleraBros",
+    "owner": 5
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 16,
+  "fields": {
+    "name": "Trip 3 in BelleraBros",
+    "owner": 5
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 17,
+  "fields": {
+    "name": "Trip 4 in BelleraBros",
+    "owner": 5
+  }
+}
+]

@@ -1,0 +1,37 @@
+[
+{
+  "model": "chats.chat",
+  "pk": 1,
+  "fields": {
+    "club": 1
+  }
+},
+{
+  "model": "chats.chat",
+  "pk": 2,
+  "fields": {
+    "club": 2
+  }
+},
+{
+  "model": "chats.chat",
+  "pk": 3,
+  "fields": {
+    "club": 3
+  }
+},
+{
+  "model": "chats.chat",
+  "pk": 4,
+  "fields": {
+    "club": 4
+  }
+},
+{
+  "model": "chats.chat",
+  "pk": 5,
+  "fields": {
+    "club": 5
+  }
+}
+]
