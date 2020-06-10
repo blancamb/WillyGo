@@ -77,3 +77,7 @@ export const createChat = (chat) => {
 export const getAllRequests = () => {
   return axios.get(`${baseUrl}/requests/`, withHeaders())
 }
+
+export const deleteRequest = (reqID) => {
+  return axios.delete(`${baseUrl}/requests/${reqID}/`, withHeaders())
+}

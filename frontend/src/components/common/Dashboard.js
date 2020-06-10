@@ -2,7 +2,7 @@ import React from 'react'
 import Select from 'react-select'
 
 
-import { getAllUsers, createClub, createChat, getAllRequests, updateClub, getAllClubs } from '../lib/api'
+import { getAllUsers, createClub, createChat, getAllRequests, updateClub, getAllClubs, deleteRequest } from '../lib/api'
 import { getUser } from '../lib/auth'
 
 class Dashboard extends React.Component {
@@ -62,13 +62,19 @@ class Dashboard extends React.Component {
 
   //? RECEIVE AND ACCEPT/DECLINE CLUB REQUESTS
 
-  handleAcceptRequest = async event => {
+  handleAcceptRequest = async (event) => {
     event.preventDefault()
     try {
-      const clubID = 1
+      const clubID = parseFloat(event.target.value)
+      const user = getUser()
       const club = this.state.allClubs.filter(club => (club.id === clubID))
-      console.log(club)
-      await updateClub({ ...club[0], members: [1, 2, 3, 4] }, clubID)
+      const members = club[0].members.map(member => member.id)
+      const membersUpdated = [...members, user]
+      const reqID = event.target.name
+      await updateClub({ ...club[0], members: membersUpdated }, clubID)
+      await deleteRequest(reqID)
+      const resReqs = await getAllRequests()
+      this.setState({  requests: resReqs.data })
     } catch (err) {
       console.log(err)
     }
@@ -77,7 +83,10 @@ class Dashboard extends React.Component {
   handleDeclineRequest = async event => {
     event.preventDefault()
     try {
-
+      const reqID = event.target.name
+      await deleteRequest(reqID)
+      const resReqs = await getAllRequests()
+      this.setState({  requests: resReqs.data })
     } catch (err) {
       console.log(err)
     }
@@ -92,6 +101,7 @@ class Dashboard extends React.Component {
     const { club } = this.state
 
     if (!this.state.users) return null
+    if (!this.state.allClubs) return null
 
     return (
       <>
@@ -118,9 +128,12 @@ class Dashboard extends React.Component {
                 <h4>{request.sender.username} wants you to join a club</h4>
                 <button
                   onClick={this.handleAcceptRequest}
+                  value={request.club}
+                  name={request.id}
                 >accept</button>
                 <button
                   onClick={this.handleDeclineRequest}
+                  name={request.id}
                 >decline</button>
               </div>
             ))}
