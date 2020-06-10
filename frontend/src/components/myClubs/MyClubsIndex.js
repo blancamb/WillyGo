@@ -9,7 +9,8 @@ class MyClubsIndex extends React.Component {
   async componentDidMount() {
     try {
       const res = await getAllMyClubs()
-      this.setState({ myClubs: res.data })
+      const myClubsReverse = await res.data.reverse()
+      this.setState({ myClubs: myClubsReverse })
     } catch (err) {
       console.log('error!!')
     }

@@ -1,6 +1,7 @@
 import React from 'react'
+import Select from 'react-select'
 
-import { createTrip, createChat } from '../lib/api'
+import { createTrip, getAllUsers } from '../lib/api'
 import ClubTripIndex from '../Trips/ClubTripsIndex'
 import ChatBox from '../Chat/ChatBox'
 
@@ -13,6 +14,20 @@ class ClubShow extends React.Component {
     },
     chat: {
       club: ''
+    },
+    users: [],
+    usernames: []
+  }
+
+  async componentDidMount() {
+    try {
+      const res = await getAllUsers()
+      this.setState({ users: res.data })
+      res.data.map(user => {
+        this.state.usernames.push(user.username)
+      })
+    } catch (err) {
+      console.log(err)
     }
   }
 
@@ -37,9 +52,11 @@ class ClubShow extends React.Component {
     }
   }
 
-  render() {
-    const { trip } = this.state
 
+  render() {
+    if (!this.state.users) return null
+
+    const { trip, usernames } = this.state
     return (
       <>
         <h1> CLUB SHOW PAGE</h1>
@@ -61,7 +78,20 @@ class ClubShow extends React.Component {
           </form>
         </div>
 
-        <ChatBox 
+        <div>
+          <h3>Add a member to the club:</h3>
+          {/* <form onSubmit={handleAddMemberSubmit}> */}
+          <form>
+            <label>Who do you want to add?</label>
+            <input
+              type="search"
+            >
+            </input>
+
+          </form>
+        </div>
+
+        <ChatBox
           props={this.props}
         />
       </>

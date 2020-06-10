@@ -38,6 +38,7 @@ class Dashboard extends React.Component {
   }
 
   //? Creates a club and the club's chat
+  
   handleSubmit = async event => {
     event.preventDefault()
     try {

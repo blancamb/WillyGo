@@ -11,7 +11,8 @@ class MyTripsIndex extends React.Component {
   async componentDidMount() {
     try {
       const res = await getAllMyTrips()
-      this.setState({ myTrips: res.data })
+      const tripsReverse = await res.data.reverse()
+      this.setState({ myTrips: tripsReverse })
     } catch (err) {
       console.log(err)
     }

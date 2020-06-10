@@ -16,12 +16,16 @@ a {
   padding: 20px;
 }
 
+
+
 //? CHATBOX
 
 .chatbox-frame {
   background-color: rgb(179, 212, 202);
   max-height: 300px;
   max-width: 300px;
+  min-height: 300px;
+  min-width: 300px;
   overflow: scroll;
 
 }

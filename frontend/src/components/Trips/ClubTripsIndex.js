@@ -12,7 +12,8 @@ class ClubTripIndex extends React.Component {
     try {
       const clubID = this.props.props.match.params.clubID
       const res = await getAllClubTrips(clubID)
-      this.setState({ clubTrips: res.data })
+      const tripsReverse = await res.data.reverse()
+      this.setState({ clubTrips: tripsReverse })
 
     } catch (err) {
       console.log(err)

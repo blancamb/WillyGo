@@ -25,8 +25,9 @@ class ChatBox extends React.Component {
   pageSetup = async () => {
     try {
       const clubID = this.props.props.match.params.clubID
-      const res = await getAllMessages(clubID).reverse()
-      this.setState({ allMessages: res.data.messages })
+      const res = await getAllMessages(clubID)
+      const chatReverse = await res.data.messages.reverse()
+      this.setState({ allMessages: chatReverse })
     } catch (err) {
       console.log(err)
     }
