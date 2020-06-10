@@ -53,6 +53,8 @@ class ClubShow extends React.Component {
   }
 
 
+
+
   render() {
     if (!this.state.users) return null
 
@@ -85,6 +87,7 @@ class ClubShow extends React.Component {
             <label>Who do you want to add?</label>
             <input
               type="search"
+
             >
             </input>
 

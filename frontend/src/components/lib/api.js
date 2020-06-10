@@ -28,12 +28,20 @@ export const getAllUsers = () => {
 
 //? CLUBS
 
+export const getAllClubs = () => {
+  return axios.get(`${baseUrl}/clubs/`, withHeaders())
+}
+
 export const getAllMyClubs = () => {
-  return axios.get(`${baseUrl}/myclubs/`, withHeaders())
+  return axios.get(`${baseUrl}/clubs/myclubs/`, withHeaders())
 }
 
 export const createClub = (club) => {
   return axios.post(`${baseUrl}/myclubs/`, club, withHeaders())
+}
+
+export const updateClub = (club, clubID) => {
+  return axios.put(`${baseUrl}/clubs/${clubID}/`, club, withHeaders())
 }
 
 //? TRIPS
@@ -62,4 +70,10 @@ export const sendMessage = (message) => {
 
 export const createChat = (chat) => {
   return axios.post(`${baseUrl}/chats/`, chat, withHeaders())
+}
+
+//? REQUESTS
+
+export const getAllRequests = () => {
+  return axios.get(`${baseUrl}/requests/`, withHeaders())
 }

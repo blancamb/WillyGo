@@ -13,9 +13,15 @@ class ClubListView(APIView):
 
     permission_classes = (IsAuthenticated,)
 
-    # def is_club_member(self, club, user):
-    #     if club.members.id != user.id:
-    #         raise PermissionDenied
+    def get(self, request):
+        clubs = Club.objects.all()
+        serialized_clubs = PopulatedClubSerializer(clubs, many=True)
+        return Response(serialized_clubs.data, status=status.HTTP_200_OK)
+
+
+class MyClubsListView(APIView):
+
+    permission_classes = (IsAuthenticated,)
 
 #? gets clubs only when user is member
     def get(self, request):
@@ -50,7 +56,8 @@ class ClubDetailView(APIView):
         return Response(serialized_club.data)
 
     def put(self, request, pk):
-        club_to_update = self.get_club(pk)
+        # club_to_update = self.get_club(pk)
+        club_to_update = Club.objects.get(pk=pk)
         updated_club = ClubSerializer(club_to_update, data=request.data)
         if updated_club.is_valid():
             updated_club.save()

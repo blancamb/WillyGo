@@ -1,5 +1,9 @@
-
-body, h1, h2, h3, h4, h5 {
+body,
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
 }
@@ -10,13 +14,46 @@ a {
   color: rgb(21, 39, 35);
 }
 
+//? PAGE SECTIONS
+
 .navbar {
   background: rgb(42, 170, 170);
   margin-bottom: 10px;
   padding: 20px;
 }
 
+.navbar-logged {
+  background: rgb(144, 184, 184);
+  margin-bottom: 10px;
+  padding: 10px;
+}
 
+.main {
+  display: flex;
+  height: 100vh;
+
+  .all-main {
+    width: 100%;
+    background: rgb(231, 231, 190);  
+
+}
+
+  .left-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(230, 188, 188);
+    width: 30%;
+  }
+
+  .central {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(175, 184, 212);
+    width: 70%;
+  }
+}
 
 //? CHATBOX
 
@@ -27,7 +64,6 @@ a {
   min-height: 300px;
   min-width: 300px;
   overflow: scroll;
-
 }
 
 //? TRIPS
@@ -41,8 +77,10 @@ a {
 
 .my-trips-index {
   display: flex;
-  max-height: 200px;
-  max-width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-height: 90%;
+  max-width: 90%;
   overflow: scroll;
 }
 
@@ -69,4 +107,14 @@ a {
   width: 120px;
   height: 120px;
   font-size: 12px;
+}
+
+.requests-frame {
+  background: rgb(193, 230, 176);
+  max-height: 100px;
+  max-width: 300px;
+  min-height: 100px;
+  min-width: 300px;
+  overflow: scroll;
+
 }

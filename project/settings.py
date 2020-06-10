@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'trips',
     'chats',
     'messsages',
+    'requests'
 ]
 
 MIDDLEWARE = [
