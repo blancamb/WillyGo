@@ -25,18 +25,27 @@ class PinListView(APIView):
     permission_classes = (IsAuthenticated,)
 
     def get(self, _request):
-        pins = Pin.objects.all()
+        user = self.request.user
+        pins = Pin.objects.filter(owner=user)
         serialized_pins = PopulatedPinSerializer(pins, many=True)
         return Response(serialized_pins.data, status=status.HTTP_200_OK)
 
     def post(self, request):
-        request.data['owner'] = request.user.id
         new_pin = PinSerializer(data=request.data)
         if new_pin.is_valid():
             new_pin.save()
             return Response(new_pin.data, status=status.HTTP_201_CREATED)
         return Response(new_pin.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
+
+class TripPinsListView(APIView):
+
+    permission_classes = (IsAuthenticated,)
+
+    def get(self, _request, pk):
+        pins = Pin.objects.filter(trips=pk)
+        serialized_pins = PopulatedPinSerializer(pins, many=True)
+        return Response(serialized_pins.data, status=status.HTTP_200_OK)
 
 class PinDetailView(APIView):
 

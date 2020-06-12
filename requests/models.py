@@ -19,7 +19,7 @@ class Request(models.Model):
         on_delete=models.CASCADE
     )
 
-    club = models.OneToOneField(
+    club = models.ForeignKey(
         'clubs.Club',
         related_name='club',
         on_delete=models.CASCADE

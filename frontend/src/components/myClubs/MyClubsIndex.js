@@ -18,14 +18,17 @@ class MyClubsIndex extends React.Component {
 
   render() {
     return (
-      <>
-        <h1>MY CLUBS INDEX</h1>
+      <div className="main-page-c">
+        <div className="page-title">
+          <h1>my clubs</h1>
+        </div>           
         <div className="my-clubs-index">
           {this.state.myClubs.map(club => (
-            <ClubCard {...club} key={club.id}/>
+            <ClubCard {...club} key={club.id} />
           ))}
         </div>
-      </>
+
+      </div>
     )
   }
 }

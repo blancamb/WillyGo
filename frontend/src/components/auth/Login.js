@@ -22,19 +22,23 @@ class Login extends React.Component {
     try {
       const res = await loginUser(this.state.formData)
       setToken(res.data.token)
-      this.props.history.push('/home')
+      this.props.history.push('/dashboard')
 
     } catch (err) {
-      this.setState({ error: 'Invalid Credentials' })
+      console.log(err)
     }
   }
 
   render() {
-    const { formData, error } = this.state
+    const { formData } = this.state
     return (
-      <>
-        <h1>LOGIN</h1>
-        <form onSubmit={this.handleSubmit}>
+      <div className="main-page">
+        <div className="page-title">
+          <h1>login</h1>
+        </div>   
+        <form 
+          className="auth login"
+          onSubmit={this.handleSubmit}>
           <div className="field">
             <label>username:</label>
             <input 
@@ -58,7 +62,7 @@ class Login extends React.Component {
 
           <button>submit</button>
         </form>
-      </>
+      </div>
     )
   }
 }

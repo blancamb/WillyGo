@@ -1,11 +1,19 @@
 import React from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const NavbarLogged = () => (
-  <div className="navbar-logged">
-    <Link to="/myclubs">my clubs </Link>
-    <Link to="/mytrips">my trips </Link>
+  <div className="links">
+    <Link to="/myclubs"
+      className="navbar-item"
+    >my clubs </Link>
+    <Link to="/mytrips"
+      className="navbar-item"
+    >my trips </Link>
+    <Link to="/mypins"
+      className="navbar-item"
+    >my pins </Link>
+
   </div>
 )
 
-export default withRouter(NavbarLogged)
+export default NavbarLogged

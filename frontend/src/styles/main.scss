@@ -1,12 +1,23 @@
+//? VARS
+:root {
+  --main-blue: #99e1e5;
+  --main-pink: #fbafaf;
+  --main-bg: #d5dbdb;
+  --main-yellow: rgb(242, 243, 164);
+  --main-purple: rgb(186, 176, 214);
+  --main-green: rgb(136, 238, 184);
+}
+
 body,
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
   font-weight: normal;
 }
+
 
 a {
   font-weight: normal;
@@ -14,56 +25,208 @@ a {
   color: rgb(21, 39, 35);
 }
 
+//? COMMON
+
+.is-hidden {
+  display: none;
+}
+
+button {
+  background: var(--main-blue);
+  border: 3px solid white;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px;
+  font-weight: bold;
+}
+
 //? PAGE SECTIONS
 
+//? NAVBARS
+
 .navbar {
-  background: rgb(42, 170, 170);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: var(--main-blue);
+  height: 10vh;
+  max-height: 40px;
   margin-bottom: 10px;
   padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  .links {
+    margin: 20px;
+    .navbar-item {
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 30px;
+      position: relative;
+      left: -20px;
+    }
+  }
+  button {
+    margin: auto 10px auto 30px;
+  }
 }
 
 .navbar-logged {
-  background: rgb(144, 184, 184);
+  background: var(--main-yellow);
   margin-bottom: 10px;
   padding: 10px;
+  border-radius: 10px;
+  .navbar-item {
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  .links {
+    margin-left: 20px;
+  }
 }
 
-.main {
+//?
+
+.main-page {
   display: flex;
-  height: 100vh;
-
-  .all-main {
-    width: 100%;
-    background: rgb(231, 231, 190);  
-
-}
-
-  .left-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: rgb(230, 188, 188);
-    width: 30%;
-  }
-
-  .central {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: rgb(175, 184, 212);
-    width: 70%;
-  }
-}
-
-//? CHATBOX
-
-.chatbox-frame {
-  background-color: rgb(179, 212, 202);
-  max-height: 300px;
-  max-width: 300px;
-  min-height: 300px;
-  min-width: 300px;
+  flex-direction: column;
+  align-items: center;
+  background: var(--main-bg);
+  height: 88.8vh;
+  min-height: 100%;
+  border-radius: 10px;
   overflow: scroll;
+  h1 {
+    font-weight: bold;
+    color: black;
+    margin: 30px;
+  }
+}
+
+.page-title {
+  margin-top: 20px;
+}
+
+//? HOME
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .home-text {
+    text-align: center;
+    width: 70%;
+    max-width: 500px;
+    h4 {
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+}
+
+.welcome {
+  font-size: 25px;
+}
+
+
+//? AUTH
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 300px;
+  background: var(--main-pink);
+  border-radius: 10px;
+  border: 5px solid white;
+  text-align: center;
+  .field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    label {
+      margin: 10px;
+      font-weight: bold;
+    }
+    input {
+      border: 2px solid white;
+      border-radius: 5px;
+      padding: 5px;
+      text-align: center;
+      width: 200px;
+    }
+  }
+  button {
+    background: var(--main-pink);
+  }
+}
+
+.login {
+  background: var(--main-purple);
+  button {
+    background: var(--main-purple);
+  }
+}
+
+//? DASHBOARD
+
+.dashboard-widgets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-height: 220px;
+}
+
+.create-club {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  padding: 10px;
+  background: var(--main-blue);
+  border: 5px solid white;
+  border-radius: 10px;
+  input {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+  }
+  h3 {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+}
+
+.requests-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
+  background: var(--main-pink);
+  border: 5px solid white;
+  border-radius: 10px;
+  min-width: 200px;
+  max-height: 220px;
+  div {
+    overflow: scroll;
+  }
+  h3 {
+    font-weight: bold;
+  }
+  p {
+    margin: 5px;
+    font-size: 13px;
+  }
+  button {
+    background: var(--main-pink);
+  }
 }
 
 //? TRIPS
@@ -85,36 +248,353 @@ a {
 }
 
 .trip-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: 10px;
-  background-color: rgb(179, 212, 202);
+  background-color: var(--main-purple);
   width: 120px;
   height: 120px;
   font-size: 12px;
+  text-align: center;
+  border: 5px solid white;
+  border-radius: 10px;
+  min-width: 200px;
+  max-height: 220px;
+  overflow: scroll;
+
+  h3 {
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    margin: 5px;
+    margin-top: 0;
+  }
+}
+
+//? PINS
+
+.create-a-pin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  margin: 10px;
+  padding: 10px;
+  background: var(--main-purple);
+  border: 5px solid white;
+  border-radius: 10px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 200px;
+
+  }
+  input {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    width: 100%;
+  }
+
+
+
+  
+  textarea {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    width: 100%;
+  }
+  h3 {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  button {
+    background: var(--main-purple);
+  }
+}
+
+.pins-and-create {
+  display: flex;
+  justify-content: center;
+}
+.pins-frame {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 60%;
+}
+
+.pin-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  background-color: var(--main-yellow);
+  width: 120px;
+  height: 120px;
+  font-size: 12px;
+  text-align: center;
+  border: 5px solid white;
+  border-radius: 10px;
+  min-width: 300px;
+  min-height: 300px;
+  overflow: scroll;
+
+  h3 {
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    margin: 5px;
+    margin-top: 0;
+    font-size: 14px;
+  }
+
+  img {
+    width: 80%;
+    border: 3px solid white;
+    box-shadow: 1px 1px 3px black;
+    margin: 5px;
+  }
 }
 
 //? CLUBS
 
+.main-page-c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--main-bg);
+  height: 100vh;
+  min-height: 100%;
+  border-radius: 10px;
+  overflow: scroll;
+  h1 {
+    font-weight: bold;
+    color: black;
+    margin: 30px;
+  }
+}
+
+//? chatbox
+
+.chatbox-frame {
+  background-color: var(--main-bg);
+  width: 80%;
+  max-height: 550px;
+  border: 5px solid white;
+  border-radius: 10px;
+  margin-top: 10vh;
+  h1 {
+    text-align: center;
+  }
+
+  .chat-feed {
+    overflow: scroll;
+    max-height: 300px;
+  }
+
+  .chat-message {
+    margin: 20px;
+    word-wrap: normal;
+  }
+  h1 {
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 30px;
+  }
+  h4 {
+    font-size: 13px;
+    margin-bottom: 5px;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  h5 {
+    font-size: 10px;
+    margin: 0;
+    text-align: right;
+  }
+}
+
+.create-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+  padding: 10px;
+
+  textarea {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 90%;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h3 {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+}
+
+//?
+
 .my-clubs-index {
   display: flex;
-  max-height: 200px;
-  max-width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 90%;
   overflow: scroll;
 }
 
 .club-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: 10px;
-  background-color: rgb(179, 212, 202);
+  background-color: var(--main-green);
   width: 120px;
   height: 120px;
   font-size: 12px;
-}
-
-.requests-frame {
-  background: rgb(193, 230, 176);
-  max-height: 100px;
-  max-width: 300px;
-  min-height: 100px;
-  min-width: 300px;
+  text-align: center;
+  border: 5px solid white;
+  border-radius: 10px;
+  min-width: 200px;
+  max-height: 220px;
   overflow: scroll;
 
+  h3 {
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+  .club-members {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    h4 {
+      margin: 5px;
+      margin-top: 0;
+    }
+  }
+}
+
+.create-a-trip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  padding: 10px;
+  background: var(--main-blue);
+  border: 5px solid white;
+  border-radius: 10px;
+  form {
+    text-align: center;
+  }
+  input {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+  }
+  h3 {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+}
+
+.add-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: 20px;
+  padding: 10px;
+  background: var(--main-yellow);
+  border: 5px solid white;
+  border-radius: 10px;
+  h3 {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  input {
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    width: 200px;
+    margin: 10px;
+  }
+  button {
+    background: var(--main-yellow);
+  }
+}
+
+
+.main {
+  display: flex;
+  height: 100vh;
+  overflow: scroll;
+
+  .left-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--main-pink);
+    width: 35%;
+    height: 100%;
+    border-radius: 10px;
+    margin-right: 10px;
+    overflow: scroll;
+  }
+
+  .central {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--main-bg);
+    width: 65%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: scroll;
+
+    .club-trip-index-c {
+      width: 90%;
+    }
+    .add-widgets {
+      margin-top: 10vh;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    h1 {
+      font-weight: bold;
+    }
+  }
 }

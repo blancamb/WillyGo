@@ -23,7 +23,6 @@ class TripsListView(APIView):
 
     permission_classes = (IsAuthenticated,)
 
-    
     def get(self, _request):
         user = self.request.user
         trips = Trip.objects.filter(owner__members__username = user)

@@ -21,7 +21,7 @@ export const getUsername = () => {
 }
 
 
-const getPayload = () => { // * returns the decoded data from the token or false
+const getPayload = () => { 
   const token = getToken()
   if (!token) return false
   const parts = token.split('.')
@@ -41,8 +41,8 @@ export const getUser = () => {
 export const isAuthenticated = () => {
   const payload = getPayload()
   if (!payload) return false
-  const now = Math.round(Date.now() / 1000) // * works out the time RIGHT NOW
-  return now < payload.exp // * is RIGHT NOW earlier than EXPIRY TIME ON TOKEN
+  const now = Math.round(Date.now() / 1000) 
+  return now < payload.exp 
 }
 
 export const logout = () => {

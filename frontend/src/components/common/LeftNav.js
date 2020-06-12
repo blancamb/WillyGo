@@ -1,15 +1,20 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
+import ChatBox from '../Chat/ChatBox'
 
 
-const LeftNav = () => {
-  return (
-    <>
-      <h1>LEFT NAV</h1> 
-      <Link to="/myclubs">my clubs </Link>
-      <Link to="/mytrips">my trips </Link>
-    </>
-  )
+class LeftNav extends React.Component {
+
+  render() {
+    console.log(this.props.match.params)
+    return (
+      <>
+        <ChatBox
+          clubID={this.props.match.params.clubID}
+        />
+      </>
+    )
+  }
 }
 
 export default withRouter(LeftNav)

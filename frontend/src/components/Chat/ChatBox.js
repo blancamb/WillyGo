@@ -24,7 +24,7 @@ class ChatBox extends React.Component {
 
   pageSetup = async () => {
     try {
-      const clubID = this.props.props.match.params.clubID
+      const clubID = this.props.clubID
       const res = await getAllMessages(clubID)
       const chatReverse = await res.data.messages.reverse()
       this.setState({ allMessages: chatReverse })
@@ -45,7 +45,7 @@ class ChatBox extends React.Component {
   handleMessageSubmit = async event => {
     event.preventDefault()
     try {
-      const clubID = this.props.props.match.params.clubID
+      const clubID = this.props.clubID
       const user = getUser()
       const res = await sendMessage({ ...this.state.message, chat: clubID, user: user })
       this.setState({ allMessages: res.data.messages, message: { ...this.state.message, content: '', chat: clubID, user: user } })
@@ -60,33 +60,40 @@ class ChatBox extends React.Component {
 
 
   render() {
+    console.log(this.props.clubID)
+
     if (!this.state.allMessages) return null
 
     return (
       <>
-        <h1>CHAT</h1>        
         <div className="chatbox-frame">
-          {this.state.allMessages.map(message => (
-            <div key={message.id}>
-              <h4>{message.content}</h4>
-              <h5>{message.user.username} - on {message.created_at}</h5>
-            </div>
-          ))}
+          <h1>chat</h1>
+          <div className="chat-feed">
+            {this.state.allMessages.map(message => (
+              <div key={message.id}
+                className="chat-message"
+              >
+                <h4>{message.content}</h4>
+                <h5><strong>{message.user.username}</strong> on {message.created_at}</h5>
+              </div>
+            ))}
+          </div>
+          
+      
+          <div className="create-message">
+            <form onSubmit={this.handleMessageSubmit}>
+              <textarea
+                type="textarea"
+                rows="2"
+                maxLength="300"
+                name="content"
+                onChange={this.handleMessageChange}
+                value={this.state.message.content}
+              />
+              <button>send a message</button>
+            </form>
+          </div>
         </div>
-
-        <form onSubmit={this.handleMessageSubmit}>
-          <label>Write a message:</label>
-          <textarea
-            type="textarea"
-            rows="2"
-            maxLength="300"
-            name="content"
-            onChange={this.handleMessageChange}
-            value={this.state.message.content}
-          />
-          <button>send a message</button>
-        </form>
-
       </>
     )
   }

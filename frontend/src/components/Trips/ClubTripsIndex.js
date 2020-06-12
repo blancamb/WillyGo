@@ -25,14 +25,14 @@ class ClubTripIndex extends React.Component {
     if (!this.state.clubTrips) return null
     if (!this.props) return null
     return (
-      <>
-        <div className="club-trip-index"
-        >
-          {this.state.clubTrips.map(trip => (
-            <TripCard {...trip} key={trip.id} />
-          ))}
-        </div>
-      </>
+     
+      <div className="club-trip-index"
+      >
+        {this.state.clubTrips.map(trip => (
+          <TripCard {...trip} key={trip.id} />
+        ))}
+      </div>
+
     )
   }
 }

@@ -36,9 +36,13 @@ class Register extends React.Component {
     const { formData, errors } = this.state
 
     return (
-      <>
-        <h1>REGISTER</h1>
-        <form onSubmit={this.handleSubmit}>
+      <div className="main-page">
+        <div className="page-title">
+          <h1>register</h1>
+        </div>        
+        <form 
+          className="auth"
+          onSubmit={this.handleSubmit}>
           <div className="field">
             <label>username</label>
             <input
@@ -71,7 +75,7 @@ class Register extends React.Component {
           </div>
 
           <div className="field">
-            <label>password_confirmation</label>
+            <label>confirm password</label>
             <input
               type="password"
               placeholder="confirm password"
@@ -84,7 +88,7 @@ class Register extends React.Component {
           <button>submit</button>
 
         </form>
-      </>
+      </div>
     )
   }
 }

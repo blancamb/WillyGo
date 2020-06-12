@@ -10,41 +10,40 @@ import ClubShow from './components/myClubs/ClubShow'
 import ClubTripIndex from './components/Trips/ClubTripsIndex'
 import MyTripsIndex from './components/Trips/MyTripsIndex'
 import TripShow from './components/Trips/TripShow'
-import ChatBox from './components/Chat/ChatBox'
 import Dashboard from './components/common/Dashboard'
-import LeftNav from './components/common/LeftNav'
-import NavbarLogged from './components/common/NavbarLogged'
+import myPinsIndex from './components/Pins/MyPinsIndex'
+import PinShow from './components/Pins/PinShow'
 
 
 
-const App = () => {
-  return (
-    <BrowserRouter>
-      <div className="navbars">
-        <Navbar />
-        <NavbarLogged />
-      </div>
-      <div className="main">
-        <div className="left-nav">
-          <LeftNav />
+class App extends React.Component {
+
+
+
+  render() {
+
+    return (
+      <BrowserRouter>
+        <div className="navbars">
+          <Navbar />
         </div>
-        <div className="central">
-          <Switch>
-            <Route exact path="/home" component={Home} />
-            <Route path="/mytrips/:tripID" component={TripShow} />
-            <Route path="/mytrips" component={MyTripsIndex} />
-            <Route path="/myclubs/:clubID/chat" component={ChatBox} />
-            <Route path="/myclubs/:clubID/trips" component={ClubTripIndex} />
-            <Route path="/myclubs/:clubID" component={ClubShow} />
-            <Route path="/myclubs" component={MyClubsIndex} />
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/register" component={Register} />
-            <Route path="/login" component={Login} />
-          </Switch>
-        </div>
-      </div>
-    </BrowserRouter>
-  )
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/mypins/:id" component={PinShow} />
+          <Route path="/mypins" component={myPinsIndex} />
+          <Route path="/mytrips/:tripID" component={TripShow} />
+          <Route path="/mytrips" component={MyTripsIndex} />
+          <Route path="/myclubs/:clubID/trips" component={ClubTripIndex} />
+          <Route path="/myclubs/:clubID" component={ClubShow} />
+          <Route path="/myclubs" component={MyClubsIndex} />
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/register" component={Register} />
+          <Route path="/login" component={Login} />
+        </Switch>
+      </BrowserRouter>
+    )
+  }
 }
 
 export default App
+

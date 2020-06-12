@@ -58,6 +58,20 @@ export const createTrip = (trip) => {
   return axios.post(`${baseUrl}/mytrips/`, trip, withHeaders())
 }
 
+//? PINS
+
+export const getAllMyPins = () => {
+  return axios.get(`${baseUrl}/pins/`, withHeaders())
+}
+
+export const getAllTripPins = (tripID) => {
+  return axios.get(`${baseUrl}/mytrips/${tripID}/pins/`, withHeaders())
+}
+
+export const createPin = (pin) => {
+  return axios.post(`${baseUrl}/pins/`, pin, withHeaders())
+}
+
 //? CHATS
 
 export const getAllMessages = (clubID) => {
@@ -80,4 +94,8 @@ export const getAllRequests = () => {
 
 export const deleteRequest = (reqID) => {
   return axios.delete(`${baseUrl}/requests/${reqID}/`, withHeaders())
+}
+
+export const createRequest = (req) => {
+  return axios.post(`${baseUrl}/requests/`, req, withHeaders())
 }
