@@ -18,6 +18,14 @@ class ClubListView(APIView):
         serialized_clubs = PopulatedClubSerializer(clubs, many=True)
         return Response(serialized_clubs.data, status=status.HTTP_200_OK)
 
+    def post(self, request):
+        new_club = ClubSerializer(data=request.data)
+        if new_club.is_valid():
+            new_club.save()
+            return Response(new_club.data, status=status.HTTP_201_CREATED)
+        return Response(new_club.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+
+
 
 class MyClubsListView(APIView):
 
@@ -30,12 +38,6 @@ class MyClubsListView(APIView):
         serialized_clubs = PopulatedClubSerializer(clubs, many=True)
         return Response(serialized_clubs.data, status=status.HTTP_200_OK)
 
-    def post(self, request):
-        new_club = ClubSerializer(data=request.data)
-        if new_club.is_valid():
-            new_club.save()
-            return Response(new_club.data, status=status.HTTP_201_CREATED)
-        return Response(new_club.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
 
 class ClubDetailView(APIView):

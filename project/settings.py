@@ -143,3 +143,4 @@ AUTH_USER_MODEL = 'jwt_auth.User'
 
 STATIC_URL = '/static/'
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

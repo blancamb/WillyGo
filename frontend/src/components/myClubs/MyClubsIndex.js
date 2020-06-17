@@ -1,6 +1,7 @@
 import React from 'react'
 import { getAllMyClubs } from '../lib/api'
 import ClubCard from './ClubCard'
+import CreateClub from './CreateClub'
 
 class MyClubsIndex extends React.Component {
 
@@ -24,9 +25,12 @@ class MyClubsIndex extends React.Component {
         </div>           
         <div className="my-clubs-index">
           {this.state.myClubs.map(club => (
-            <ClubCard {...club} key={club.id} />
+            <ClubCard {...club} 
+              key={club.id} />
           ))}
         </div>
+
+        <CreateClub />
 
       </div>
     )

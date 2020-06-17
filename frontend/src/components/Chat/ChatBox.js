@@ -73,8 +73,8 @@ class ChatBox extends React.Component {
               <div key={message.id}
                 className="chat-message"
               >
-                <h4>{message.content}</h4>
                 <h5><strong>{message.user.username}</strong> on {message.created_at}</h5>
+                <h4>{message.content}</h4>
               </div>
             ))}
           </div>
@@ -90,7 +90,7 @@ class ChatBox extends React.Component {
                 onChange={this.handleMessageChange}
                 value={this.state.message.content}
               />
-              <button>send a message</button>
+              <button>reply</button>
             </form>
           </div>
         </div>

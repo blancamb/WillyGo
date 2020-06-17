@@ -86,6 +86,8 @@ class CreatePin extends React.Component {
             value={pin.link}
           />
           <Select
+            className="Select-component"
+            classNamePrefix="Select-component"
             options={options}
             isMulti
             placeholder='add it to a trip?'

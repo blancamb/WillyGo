@@ -20,7 +20,7 @@ class TripPinsIndex extends React.Component {
 
   render() {
     const { allPins } = this.state
-
+    if (!allPins) return null
     return (
       <div className="main-page">
         <div className="page-title">

@@ -95,7 +95,8 @@ class ClubShow extends React.Component {
 
   render() {
     if (!this.state.users) return null
-    const { trip, chat, request } = this.state
+    const { trip, request } = this.state
+    const club = this.props.match.params.clubID
     const options = this.state.users.map(user => {
       return {
         value: user.username,
@@ -110,7 +111,7 @@ class ClubShow extends React.Component {
         <div className="main">
           <div className="left-nav">
             <LeftNav
-              props={chat.club} />
+              props={club} />
           </div>
           <div className="central">
             <div className="page-title">
@@ -141,6 +142,7 @@ class ClubShow extends React.Component {
                 <form
                   onSubmit={this.handleInviteUser}>
                   <Select
+                    className="Select-component"
                     options={options}
                     placeholder='select a user'
                     onChange={this.handleUserSelect}

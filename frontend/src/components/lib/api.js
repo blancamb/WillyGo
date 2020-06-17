@@ -37,7 +37,7 @@ export const getAllMyClubs = () => {
 }
 
 export const createClub = (club) => {
-  return axios.post(`${baseUrl}/myclubs/`, club, withHeaders())
+  return axios.post(`${baseUrl}/clubs/`, club, withHeaders())
 }
 
 export const updateClub = (club, clubID) => {

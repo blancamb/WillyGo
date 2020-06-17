@@ -31,7 +31,7 @@ class App extends React.Component {
           <Route exact path="/" component={Home} />
           <Route path="/mypins/:id" component={PinShow} />
           <Route path="/mypins" component={myPinsIndex} />
-          <Route path="/mytrips/:tripID" component={TripShow} />
+          <Route path="/myclubs/:clubID/trips/:tripID" component={TripShow} />
           <Route path="/mytrips" component={MyTripsIndex} />
           <Route path="/myclubs/:clubID/trips" component={ClubTripIndex} />
           <Route path="/myclubs/:clubID" component={ClubShow} />

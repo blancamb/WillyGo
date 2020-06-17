@@ -12,7 +12,7 @@ class Pin(models.Model):
 
     trips = models.ManyToManyField(
         'trips.Trip',
-        related_name='trips',
+        related_name='pins',
         blank=True
     )
 
