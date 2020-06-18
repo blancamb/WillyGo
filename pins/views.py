@@ -36,6 +36,7 @@ class PinListView(APIView):
             new_pin.save()
             return Response(new_pin.data, status=status.HTTP_201_CREATED)
         return Response(new_pin.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+        
 
 
 class TripPinsListView(APIView):
