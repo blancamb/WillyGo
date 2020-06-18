@@ -11,12 +11,6 @@ const PinCard = ({ id, title, details, image, link, owner, trips }) => (
             <img src={image} alt="sorry, it did not load!"/>
           </div>
           <h3>{title}</h3>
-          <div>{trips.map(trip => (
-            <h5 key={trip.id}> <strong>{trip.name}</strong></h5>
-          ))}</div>
-          {/* <h4>{details}</h4>
-          <a href={link}/> */}
-          {/* <h5>added by <strong>{owner.username}</strong></h5> */}
         </div>
       </Link>
     </div>

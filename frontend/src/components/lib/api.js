@@ -75,7 +75,7 @@ export const createPin = (pin) => {
 //? CHATS
 
 export const getAllMessages = (clubID) => {
-  return axios.get(`${baseUrl}/chats/${clubID}`, withHeaders())
+  return axios.get(`${baseUrl}/chats/${clubID}/`, withHeaders())
 }
 
 export const sendMessage = (message) => {
