@@ -2,7 +2,6 @@ import React from 'react'
 
 import { getAllMyTrips } from '../lib/api'
 import TripCard from './TripCard'
-import LeftNav from '../common/LeftNav'
 
 class MyTripsIndex extends React.Component {
 
@@ -24,11 +23,6 @@ class MyTripsIndex extends React.Component {
   render() {
     return (
       <div className="main-page">
-        {/* <div className="main">
-          <div className="left-nav">
-            <LeftNav />
-          </div>
-          <div className="central"> */}
         <div className="page-title">
           <h1>my trips</h1>
         </div>           
@@ -37,9 +31,6 @@ class MyTripsIndex extends React.Component {
             <TripCard {...trip} key={trip.id} />
           ))}
         </div>
-        {/* </div>
-        </div> */}
-        
       </div>
     )
   }

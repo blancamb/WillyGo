@@ -27,7 +27,6 @@ class ClubTripIndex extends React.Component {
   render() {
     if (!this.state.clubTrips) return null
     if (!this.state.clubID) return null
-    console.log(this.state.clubID)
     return (
 
       <div className="club-trip-index"

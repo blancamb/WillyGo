@@ -60,7 +60,6 @@ class ChatBox extends React.Component {
 
 
   render() {
-    console.log(this.props.clubID)
 
     if (!this.state.allMessages) return null
 

@@ -14,7 +14,6 @@ class Navbar extends React.Component {
   }
 
   render() {
-    console.log(isAuthenticated())
 
     return (
       <>

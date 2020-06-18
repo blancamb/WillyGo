@@ -35,7 +35,7 @@ class ClubShow extends React.Component {
       const res = await getAllUsers()
       this.setState({ users: res.data })
       res.data.map(user => {
-        this.state.usernames.push(user.username)
+        return this.state.usernames.push(user.username)
       })
     } catch (err) {
       console.log(err)
@@ -115,7 +115,7 @@ class ClubShow extends React.Component {
           </div>
           <div className="central">
             <div className="page-title">
-              <h1>club</h1>
+              <h1>club's dashboard</h1>
             </div>
             <div className="club-trip-index-c">
               <ClubTripIndex

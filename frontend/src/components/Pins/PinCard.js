@@ -6,10 +6,12 @@ const PinCard = ({ id, title, details, image, link, owner, trips }) => (
   <>
     <div className="pin-card">
       <Link to={`/mypins/${id}`}>
-        <div key={id}>
+        <div className="pin" key={id}>
+          <div className="pin-img">
+            <img src={image} alt="sorry, it did not load!"/>
+          </div>
           <h3>{title}</h3>
-          <img src={image} />
-          <div>trips:{trips.map(trip => (
+          <div>{trips.map(trip => (
             <h5 key={trip.id}> <strong>{trip.name}</strong></h5>
           ))}</div>
           {/* <h4>{details}</h4>

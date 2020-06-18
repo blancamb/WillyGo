@@ -7,6 +7,7 @@ class CreatePin extends React.Component {
   state = {
     pin: {
       title: '',
+      address: '',
       details: '',
       image: '',
       link: '',
@@ -72,6 +73,12 @@ class CreatePin extends React.Component {
             name="title"
             onChange={this.handleChange}
             value={pin.title}
+          />
+          <input
+            placeholder="address *"
+            name="address"
+            onChange={this.handleChange}
+            value={pin.address}
           />
           <input
             placeholder="add an image link"

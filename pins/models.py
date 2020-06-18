@@ -6,6 +6,7 @@ User = get_user_model()
 
 class Pin(models.Model):
     title = models.CharField(max_length=100)
+    address = models.CharField(max_length=500)
     details = models.CharField(max_length=1000, blank=True)
     image = models.CharField(max_length=300, blank=True)
     link = models.CharField(max_length=300, blank=True)
